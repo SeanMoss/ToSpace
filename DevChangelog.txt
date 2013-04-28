@@ -1,0 +1,20 @@
++ represents an addition
+- represents a removal
+* represents a change to an existing feature
+
+Version 0.0.1 - 4/28/13
+	+ Basic blocks, currently split into exterior and interior blocks, only one kind of each: hull and carpet
+	+ Basic backgrounds, which go behind the player and do not impede movements, like blocks
+	+ Basic entity class and beginning of player class
+	+ Collision detection between blocks and entities (still VERY buggy)
+	+ Saving and loading of world, split into 32x32 block regions
+	+ Placement and destruction of blocks and backgrounds
+	+ Basic gravity physics
+	+ Skeleton GUI code (not event driven, will change in future)
+	+ State managment system
+	+ Highly dynamic texture loader for blocks and backgrounds
+	+ Metadata based system to allow for multiple sub-blocks
+	+ Overridale methods in the block class to allow for highly customized texture and metadata useage
+	+ Basic support for non-square blocks (not implemented yet)
+	+ Beginnings of an inventory system
+	+ Game settings (cannot be changed in game)

@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4DA367E1-3D6A-466C-A250-3F6909B3DE47}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>To_Space</RootNamespace>
+    <AssemblyName>To Space</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\RockMoss Games\To Space Builds\v0.0.x\1\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\WindowsGL\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\WindowsGL\Release\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E9B1D49DCD089945AE0B839DA5AC6859D06249DA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>To Space_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\GameSettings.cs" />
+    <Compile Include="Common\ToSpaceColor.cs" />
+    <Compile Include="Common\Vector2i.cs" />
+    <Compile Include="Common\WorldCamera.cs" />
+    <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Entities\Player.cs" />
+    <Compile Include="GUI\Button.cs" />
+    <Compile Include="GUI\ClickableObject.cs" />
+    <Compile Include="Inv\Inventory.cs" />
+    <Compile Include="Inv\ItemStack.cs" />
+    <Compile Include="Inv\Slot.cs" />
+    <Compile Include="Items\BlockPen.cs" />
+    <Compile Include="Items\ColorCycler.cs" />
+    <Compile Include="Items\Item.cs" />
+    <Compile Include="Managers\GuiManager.cs" />
+    <Compile Include="Managers\InputManager.cs" />
+    <Compile Include="Managers\Manager.cs" />
+    <Compile Include="Managers\StateManager.cs" />
+    <Compile Include="Managers\ThreadManager.cs" />
+    <Compile Include="States\LoadingState.cs" />
+    <Compile Include="States\MainMenuState.cs" />
+    <Compile Include="States\PlayingState.cs" />
+    <Compile Include="States\SplashState.cs" />
+    <Compile Include="States\State.cs" />
+    <Compile Include="Terrain\Backgrounds\Background.cs" />
+    <Compile Include="Terrain\Backgrounds\GlassBackground.cs" />
+    <Compile Include="Terrain\Blocks\Block.cs" />
+    <Compile Include="Terrain\Blocks\BuildBlock.cs" />
+    <Compile Include="Common\BoundingPolygon.cs" />
+    <Compile Include="Terrain\Blocks\CarpetFloorBlock.cs" />
+    <Compile Include="Terrain\Blocks\HullBlock.cs" />
+    <Compile Include="Terrain\LightingManager.cs" />
+    <Compile Include="Terrain\Materials\Material.cs" />
+    <Compile Include="Terrain\ParallaxingBackground.cs" />
+    <Compile Include="Terrain\Region.cs" />
+    <Compile Include="Terrain\RegionManager.cs" />
+    <Compile Include="Terrain\TextureManager.cs" />
+    <Compile Include="ToSpaceGame.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TSDebug.cs" />
+    <Compile Include="Terrain\World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Lidgren.Network">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Lidgren.Network.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.Sdl">
+      <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Tao.Sdl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Textures\Blocks\ShipBackgrounds.xnb">
+      <Link>Content\Textures\Blocks\ShipBackgrounds.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Splashes\MonogameSplash.xnb">
+      <Link>Content\Splashes\MonogameSplash.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Splashes\RockMossLogo.xnb">
+      <Link>Content\Splashes\RockMossLogo.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Splashes\ToSpaceLogo.xnb">
+      <Link>Content\Splashes\ToSpaceLogo.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\GUI\Buttons\ClickedBox.xnb">
+      <Link>Content\GUI\Buttons\ClickedBox.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\GUI\Buttons\HoverBox.xnb">
+      <Link>Content\GUI\Buttons\HoverBox.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\GUI\Buttons\StandardBox.xnb">
+      <Link>Content\GUI\Buttons\StandardBox.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Fonts\console.xnb">
+      <Link>Content\Fonts\console.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Textures\Blocks\ShipBuildBlocks.xnb">
+      <Link>Content\Textures\Blocks\ShipBuildBlocks.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Textures\Backgrounds\Galaxy.xnb">
+      <Link>Content\Textures\Backgrounds\Galaxy.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Textures\Backgrounds\Starfield.xnb">
+      <Link>Content\Textures\Backgrounds\Starfield.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Entities\Player.xnb">
+      <Link>Content\Entites\Player.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Entities\PlayerCrouch.xnb">
+      <Link>Content\Entites\PlayerCrouch.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="To Space_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
