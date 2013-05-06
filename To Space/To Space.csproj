@@ -72,6 +72,7 @@
     <Compile Include="Common\WorldCamera.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\ServerPlayer.cs" />
     <Compile Include="GUI\Button.cs" />
     <Compile Include="GUI\ClickableObject.cs" />
     <Compile Include="Inv\Inventory.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Managers\Manager.cs" />
     <Compile Include="Managers\StateManager.cs" />
     <Compile Include="Managers\ThreadManager.cs" />
+    <Compile Include="Network\PacketHandler.cs" />
     <Compile Include="States\LoadingState.cs" />
     <Compile Include="States\MainMenuState.cs" />
     <Compile Include="States\PlayingState.cs" />
@@ -191,6 +193,10 @@
     </Content>
     <Content Include="..\ToSpaceContent\ToSpaceContent\bin\PSM\Content\Entities\PlayerCrouch.xnb">
       <Link>Content\Entites\PlayerCrouch.xnb</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\ToSpaceContent\ToSpaceContent\bin\Windows\Content\Audio\Music\creepy.xnb">
+      <Link>Content\Audio\Music\creepy.xnb</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="To Space_TemporaryKey.pfx" />

@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 using To_Space.GUI;
 using To_Space.Managers;
@@ -18,6 +19,10 @@ namespace To_Space.States
 	{
 		private SpriteBatch _spriteBatch;
 		private SpriteFont _spriteFont;
+
+		//Music
+		private SoundEffect _mainMusic;
+		private SoundEffectInstance _mainMusicInstance;
 		
 		//Main menu parts
 		private GuiManager _mainMenu;
@@ -70,6 +75,11 @@ namespace To_Space.States
 			_buttonEndGame.ClickTexture = _clickTex;
 			#endregion
 
+			_mainMusic = Game.Content.Load<SoundEffect>(@"Audio\Music\creepy");
+			_mainMusicInstance = _mainMusic.CreateInstance();
+			_mainMusicInstance.IsLooped = true;
+			_mainMusicInstance.Volume = .7f;
+
 			ActivateMainMenu();
 		}
 
@@ -82,6 +92,12 @@ namespace To_Space.States
 		{
 			_mainMenu.Update(gameTime);
 			_mainMenu.UpdateMembers();
+
+			if (_mainMusicInstance.State == SoundState.Stopped)
+			{
+				//
+				_mainMusicInstance.Play();
+			}
 
 			if (_buttonEndGame.IsClicked)
 				Game.Exit();

@@ -59,7 +59,7 @@ namespace To_Space
 
 		protected override void Initialize()
 		{
-			State state = new MainMenuState();
+			State state = new SplashState();
 			state.Game = this;
 			state.Initialize();
 			state.LoadContent();

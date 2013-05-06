@@ -197,12 +197,12 @@ namespace To_Space.Terrain
 
 			_player.Draw(sBatch);
 
-			sBatch.DrawString(_font, "\"To Space\" Demo Controls:", new Vector2(0, 0), Color.LightGreen);
-			sBatch.DrawString(_font, "Use A/D to move the character, Space to jump.", new Vector2(0, 20), Color.LightGreen);
-			sBatch.DrawString(_font, "Press R to go to start point. Press T to go to building portion.", new Vector2(0, 40), Color.LightGreen);
-			sBatch.DrawString(_font, "Press Q to draw backgrounds instead of blocks. Use mouse button to draw blocks.", new Vector2(0, 60), Color.LightGreen);
-			sBatch.DrawString(_font, "Press X to delete blocks.", new Vector2(0, 80), Color.LightGreen);
-			sBatch.DrawString(_font, "Press Escape to quit the game.", new Vector2(0, 100), Color.LightGreen);
+			//sBatch.DrawString(_font, "\"To Space\" Demo Controls:", new Vector2(0, 0), Color.LightGreen);
+			//sBatch.DrawString(_font, "Use A/D to move the character, Space to jump.", new Vector2(0, 20), Color.LightGreen);
+			//sBatch.DrawString(_font, "Press R to go to start point. Press T to go to building portion.", new Vector2(0, 40), Color.LightGreen);
+			//sBatch.DrawString(_font, "Press Q to draw backgrounds instead of blocks. Use mouse button to draw blocks.", new Vector2(0, 60), Color.LightGreen);
+			//sBatch.DrawString(_font, "Press X to delete blocks.", new Vector2(0, 80), Color.LightGreen);
+			//sBatch.DrawString(_font, "Press Escape to quit the game.", new Vector2(0, 100), Color.LightGreen);
 
 			sBatch.DrawString(_font, "FPS: " + Math.Round((1 / gameTime.ElapsedGameTime.TotalSeconds), 3), new Vector2(0, 720), Color.Red);
 			sBatch.DrawString(_font, "Player position: " + this._player.Position.X + " " + this._player.Position.Y, new Vector2(0, 740), Color.Red);

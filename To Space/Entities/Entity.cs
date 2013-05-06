@@ -15,7 +15,7 @@ namespace To_Space.Entities
 	public class Entity
 	{
 		#region Static Entites
-		public const float STANDARD_GRAVITY = .09f;
+		public const float STANDARD_GRAVITY = .22f;
 
 		public const float TERMINAL_VELOCITY = 8f;
 		#endregion
@@ -70,8 +70,6 @@ namespace To_Space.Entities
 
 		//Speeds of the entity
 		public float WalkSpeed = 2f;
-		public float RunSpeed = 4f;
-		public float SprintSpeed = 7f;
 
 		//If this entity ignores gravity
 		public bool IgnoresGravity = false;

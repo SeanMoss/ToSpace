@@ -20,10 +20,16 @@ namespace To_Space.Entities
 		private bool _crouching = false;
 		public bool Crouching { get { return _crouching; } }
 
+		//Other speeds
+		public float CrouchSpeed = 1.5f;
+		public float RunSpeed = 5f;
+		public float SprintSpeed = 8f;
+
 		public Player(Vector2 pos, Texture2D tex, World w)
 			: base(pos, tex, w)
 		{
-			this.JumpStrength = 5f;
+			this.JumpStrength = 8f;
+			this.WalkSpeed = 2.5f;
 			_crouch = _world.Game.Content.Load<Texture2D>(@"Entites\PlayerCrouch");
 			_oldTexture = tex;
 		}
@@ -35,15 +41,17 @@ namespace To_Space.Entities
 			{
 				if (this._texture == _oldTexture)
 				{
+					this._crouching = true;
 					this.SetTexture(_crouch);
-					this.JumpStrength = 2f;
+					this.JumpStrength = 4f;
 				}
 				else
 				{
 					if (this.canStand())
 					{
+						this._crouching = false;
 						this.SetTexture(_oldTexture);
-						this.JumpStrength = 5f;
+						this.JumpStrength = 8f;
 					}
 				}
 			}
@@ -56,7 +64,14 @@ namespace To_Space.Entities
 
 			if (_world.Game.InputManager.IsKeyDown(Keys.D))
 			{
-				this.Velocity.X = this.WalkSpeed;
+				if (!this._crouching)
+				{
+					this.Velocity.X = this.WalkSpeed;
+				}
+				else
+				{
+					this.Velocity.X = this.CrouchSpeed;
+				}
 			}
 			else
 			{
@@ -64,7 +79,14 @@ namespace To_Space.Entities
 
 				if (_world.Game.InputManager.IsKeyDown(Keys.A))
 				{
-					this.Velocity.X = -this.WalkSpeed;
+					if (!this._crouching)
+					{
+						this.Velocity.X = -this.WalkSpeed;
+					}
+					else
+					{
+						this.Velocity.X = -this.CrouchSpeed;
+					}
 				}
 				else
 				{
@@ -92,7 +114,7 @@ namespace To_Space.Entities
 
 			this.SetTexture(old);
 
-			if (dist != null && dist > diff)
+			if (dist == null || (dist != null && dist > diff))
 			{
 				return true;
 			}
